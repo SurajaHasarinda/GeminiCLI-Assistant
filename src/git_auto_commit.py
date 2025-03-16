@@ -10,12 +10,15 @@ def generate_commit_message(status):
     prompt = f"""
     Generate a concise and professional Git commit message following this structure:
 
-    <type>(<scope>): <subject> 
+    add: <scope>
+    modify: <scope>
+    remove: <scope>
+    refactor: <scope>
 
-    - Identify the appropriate commit type (feat, fix, docs, style, refactor, test, chore).
+    - Only include the commit message in the response.
     - Include the affected file names in <scope>.
-    - Provide a brief summary of the changes in <subject>.
-    - Do this to each file with changes.
+    - Use 'add' for new files, 'modify' for changes, 'remove' for deletions, and 'refactor' for refactoring.
+    - Do not include any additional details or explanations.
 
     Changes:
     {status}
@@ -23,7 +26,6 @@ def generate_commit_message(status):
     response = model.generate_content(prompt)
 
     return response.text.strip() if response.text else "Commit changes."
-
 
 def git_auto_commit():
     git_status = get_git_status()
@@ -35,9 +37,20 @@ def git_auto_commit():
     print("\n✅ Suggested Commit Message:")
     print(f"🔹 {commit_message}")
 
-    confirm = input("\nDo you want to commit this change? (y/N): ").strip().lower()
+    confirm = input("\nDo you want to commit this change? ('y' to commit, 'n' to abort, 'c' to customize): ").strip().lower()
+
     if confirm == "y":
         subprocess.run(["git", "commit", "-m", commit_message])
+        print("✅ Commit successful!")
+    elif confirm == "c":
+        custom_message = input("Enter a custom commit message (or type 'n' to cancel): ").strip()
+        if custom_message != "n":
+            subprocess.run(["git", "commit", "-m", custom_message])
+            print("✅ Commit successful!")
+    elif confirm == "n":
+        print("🚫 Commit aborted")
+    else:
+        print("⚠️ Invalid input. Please enter 'y', 'n', or 'c'. Commit aborted.")
 
 if __name__ == "__main__":
     git_auto_commit()
