@@ -13,16 +13,16 @@ def ask_gemini_command(query, directory="."):
         Provide only the necessary command (in the simplest form) to achieve the following:
         {query}
 
-        * Command should support command-line interface (CLI) syntax.
-        * Do not include any explanations or context in the command.
-        * Only provide the command for existing files and folders unless creating new ones (Generate names base on the query).
+        - Command should support command-line interface (CLI) syntax.
+        - Do not include any explanations or context in the command.
+        - Only provide the command for existing files and folders unless creating new ones (Generate names base on the query).
         """
         response = model.generate_content(prompt)
         return response.text.strip() if response.text else "⚠️ No response received."
     except Exception as e:
         return f"⚠️ Error: {e}"
 
-if __name__ == "__main__":
+def find_command():
     print("\n💡 AI Assistant - Ask Gemini for a Command! 💡")
     while True:
         query = input("\n🔹 Enter a command description (or type 'q' to quit): ").strip()
@@ -35,3 +35,6 @@ if __name__ == "__main__":
         print(f"🔹 {command}")
 
         execute_command(command)
+    
+if __name__ == "__main__":
+    find_command()
