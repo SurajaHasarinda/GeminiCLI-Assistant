@@ -47,6 +47,8 @@ def git_auto_commit():
         if custom_message != "n":
             subprocess.run(["git", "commit", "-m", custom_message])
             print("✅ Commit successful!")
+        else:
+            print("🚫 Commit aborted")
     elif confirm == "n":
         print("🚫 Commit aborted")
     else:
