@@ -8,6 +8,7 @@ def execute_command(command):
     if confirm == "y":
         try:
             os.system(command)
+            print(f"✅ Executed command: {command}")
         except Exception as e:
             print(f"⚠️ Error executing command: {e}")
     else:

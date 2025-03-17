@@ -15,7 +15,7 @@ def ask_gemini_command(query, directory="."):
 
         Constraints:
         * Command should support command-line interface (CLI) syntax.
-        * Do not include any explanations or context in the command.
+        * Do not include any explanations, context, or surrounding code blocks (no "```shell...```").
         * Only provide the command for existing files and folders unless creating new ones (Generate names base on the query).
         """
         response = model.generate_content(prompt)
