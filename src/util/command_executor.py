@@ -2,7 +2,7 @@ import os
 
 def execute_command(command):
     """Executes the given command after confirmation."""
-    confirm = input("\n⚡ Do you want to execute this command? (y/N): ").strip().lower()
+    confirm = input("\n⚡ Do you want to execute this command? (y/n): ").strip().lower()
     if confirm == "y":
         try:
             os.system(command)
