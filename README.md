@@ -31,6 +31,11 @@
    ```sh
    pip install -r requirements.txt
    ```
+3. Set up python virtual environment:
+   ```sh
+   python3 -m venv venv
+   venv\Scripts\activate
+   ```
 3. Set up the `.env` file:
 - Create a new file named `.env` in the project root directory and add the following lines:
 

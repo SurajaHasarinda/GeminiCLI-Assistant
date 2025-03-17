@@ -17,4 +17,9 @@ if "%1"=="findcmd" (
     exit /b
 )
 
+if "%1"=="sortfiles" (
+    python %DIR%\src\sort_files.py
+    exit /b
+)
+
 echo Invalid command!

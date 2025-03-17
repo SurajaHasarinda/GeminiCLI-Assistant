@@ -8,17 +8,17 @@ def generate_commit_message(status):
         return "No changes detected to commit."
 
     prompt = f"""
-    Generate a concise and professional Git commit message following this structure:
+    * Generate a concise and professional Git commit message following this structure:
+        add: <scope>
+        modify: <scope>
+        remove: <scope>
+        refactor: <scope>
 
-    add: <scope>
-    modify: <scope>
-    remove: <scope>
-    refactor: <scope>
-
-    - Only include the commit message in the response.
-    - Include the affected file names in <scope>.
-    - Use 'add' for new files, 'modify' for changes, 'remove' for deletions, and 'refactor' for refactoring.
-    - Do not include any additional details or explanations.
+    Constraints:
+    * Only include the commit message in the response.
+    * Include the affected file names in <scope>.
+    * Use 'add' for new files, 'modify' for changes, 'remove' for deletions, and 'refactor' for refactoring.
+    * Do not include any additional details or explanations.
 
     Changes:
     {status}

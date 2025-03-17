@@ -10,12 +10,13 @@ def ask_gemini_command(query, directory="."):
         Based on the following files and folders in the current directory:
         {files_folders}
 
-        Provide only the necessary command (in the simplest form) to achieve the following:
+        * Provide only the necessary command (in the simplest form) to achieve the following:
         {query}
 
-        - Command should support command-line interface (CLI) syntax.
-        - Do not include any explanations or context in the command.
-        - Only provide the command for existing files and folders unless creating new ones (Generate names base on the query).
+        Constraints:
+        * Command should support command-line interface (CLI) syntax.
+        * Do not include any explanations or context in the command.
+        * Only provide the command for existing files and folders unless creating new ones (Generate names base on the query).
         """
         response = model.generate_content(prompt)
         return response.text.strip() if response.text else "⚠️ No response received."
