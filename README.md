@@ -19,7 +19,7 @@
 ### Prerequisites ⚙️🔎✅
 - Python 3.8+ 🐍🖥️📦
 - Pip 📦🔄✅
-- [Google Gemini API Key 🔑🔐📜](#get-google-gemini-api-key-🔑🔐📜) (saved in `.env` file)
+- Google Gemini API Key 🔑🔐📜 (saved in `.env` file)
 
 ### Installation Steps 📌📂🛠️
 1. Clone the repository:
@@ -30,11 +30,6 @@
 2. Install dependencies:
    ```sh
    pip install -r requirements.txt
-   ```
-3. Set up python virtual environment:
-   ```sh
-   python3 -m venv venv
-   venv\Scripts\activate
    ```
 3. Set up the `.env` file:
 - Create a new file named `.env` in the project root directory and add the following lines:
@@ -57,9 +52,10 @@
 4. Generate a new API key and copy it.
 
 ### Available Commands 🎯🎙️💬
+- `ai help` - Display help information about the assistant
 - `ai findcmd` - Find a command based on a natural language description
 - `ai autocommit` - Automate Git commits with a single 
-command
+- `ai sort` - Sort files and folders in the current directory
 
 **The `ai` command can be customized by renaming the `ai.bat` file in the project root directory.**
 
