@@ -55,7 +55,7 @@
 - `ai help` - Display help information about the assistant
 - `ai findcmd` - Find a command based on a natural language description
 - `ai autocommit` - Automate Git commits with a single 
-- `ai sort` - Sort files and folders in the current directory
+- `ai sortfiles` - Sort files and folders in the current directory
 
 **The `ai` command can be customized by renaming the `ai.bat` file in the project root directory.**
 
