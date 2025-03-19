@@ -11,6 +11,7 @@ def show_help(batch_file_name):
       {batch_file_name} findcmd     - Find a command based on a natural language description
       {batch_file_name} autocommit  - Automate Git commits with a single command
       {batch_file_name} sortfiles   - Sort files and folders in the current directory
+      {batch_file_name} chat        - Start an interactive chat with Gemini AI
     
     Usage:
       {batch_file_name} <command> [args]

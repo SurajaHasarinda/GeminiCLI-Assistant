@@ -39,11 +39,11 @@ def git_auto_commit():
 
     confirm = input("Do you want to commit this change? ('y' to commit, 'c' to customize, 'n' to cancel): ").strip().lower()
     if confirm == "y":
-        if commit_changes(commit_message):  # Fixed variable reference
+        if commit_changes(commit_message):
             print("✅ Commit successful!")
     elif confirm == "c":
-        custom_message = input("Enter your custom commit message (or leave blank to cancel): ").strip()  # Fixed .strip()
-        if custom_message:  # Ensure non-empty input
+        custom_message = input("Enter your custom commit message (or leave blank to cancel): ").strip()
+        if custom_message:
             if commit_changes(custom_message):
                 print("✅ Commit successful!")
         else:
