@@ -11,10 +11,9 @@ def get_gemini_command(directory="."):
     try:
         prompt = f"""
         You are an expert file organizer. Given the following list of files and folders in the current directory:
-
         {files_folders}
 
-        Your task is to generate a series of shell commands to organize these files into folders based on their file extensions. Follow these rules precisely:
+        Generate a series of shell commands to organize these files into folders based on their file extensions. Follow these rules precisely:
 
         Folder Creation:
         * Create a folder only if it does not already exist.

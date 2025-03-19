@@ -8,7 +8,7 @@ def generate_commit_message(status):
         return "No changes detected to commit."
 
     prompt = f"""
-    * Generate a concise and professional Git commit message following this structure:
+    Generate a concise and professional Git commit message following this structure:
         add: <scope>
         modify: <scope>
         remove: <scope>

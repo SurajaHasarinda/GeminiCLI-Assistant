@@ -27,4 +27,9 @@ if "%1"=="sortfiles" (
     exit /b
 )
 
+if "%1"=="test" (
+    python %DIR%\src\test.py
+    exit /b
+)
+
 echo Invalid command! Type "ai help" for a list of available commands.

@@ -1,7 +1,8 @@
+
 def show_help(batch_file_name):
     help_text = f"""
     =======================================
-      🤖 AI CLI Assistant - Help Guide
+        🤖  CLI Assistant - Help Guide   
     =======================================
     This assistant helps automate common tasks using AI-powered scripts.
     

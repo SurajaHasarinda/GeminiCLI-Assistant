@@ -10,7 +10,7 @@ def ask_gemini_command(query, directory="."):
         Based on the following files and folders in the current directory:
         {files_folders}
 
-        * Provide only the necessary command (in the simplest form) to achieve the following:
+        Provide only the necessary command (in the simplest form) to achieve the following:
         {query}
 
         Constraints:
