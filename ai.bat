@@ -27,6 +27,11 @@ if "%1"=="sortfiles" (
     exit /b
 )
 
+if "%1"=="chat" (
+    python %DIR%\src\chat.py
+    exit /b
+)
+
 if "%1"=="test" (
     python %DIR%\src\test.py
     exit /b
