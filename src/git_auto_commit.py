@@ -1,4 +1,4 @@
-from util.git_handler import get_git_status
+from util.git_handler import get_git_status, commit_changes
 from util.gemini import model
 import subprocess
 
@@ -37,18 +37,17 @@ def git_auto_commit():
     print("\n✅ Suggested Commit Message:")
     print(f"🔹 {commit_message}")
 
-    confirm = input("\nDo you want to commit this change? ('y' to commit, 'n' to abort, 'c' to customize): ").strip().lower()
-
+    confirm = input("Do you want to commit this change? ('y' to commit, 'c' to customize, 'n' to cancel): ").strip().lower()
     if confirm == "y":
-        subprocess.run(["git", "commit", "-m", commit_message])
-        print("✅ Commit successful!")
-    elif confirm == "c":
-        custom_message = input("Enter a custom commit message (or type 'n' to cancel): ").strip()
-        if custom_message != "n":
-            subprocess.run(["git", "commit", "-m", custom_message])
+        if commit_changes(commit_message):  # Fixed variable reference
             print("✅ Commit successful!")
+    elif confirm == "c":
+        custom_message = input("Enter your custom commit message (or leave blank to cancel): ").strip()  # Fixed .strip()
+        if custom_message:  # Ensure non-empty input
+            if commit_changes(custom_message):
+                print("✅ Commit successful!")
         else:
-            print("🚫 Commit aborted")
+            print("🚫 Commit aborted (empty message)")
     elif confirm == "n":
         print("🚫 Commit aborted")
     else:
